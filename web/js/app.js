@@ -10,17 +10,21 @@ const WEEKDAY_KEYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "s
 const THEME_COLORS = {
   chapel: "#1a1612",
   clear: "#f4f1ea",
-  parchment: "#e4d3ad",
+  spacegray: "#2b303b",
 };
 
 const state = {
   date: todayInChicago(),
   office: "morning",
   data: null,
-  theme: localStorage.getItem("do-theme") || "chapel",
+  theme: migrateTheme(localStorage.getItem("do-theme") || "chapel"),
   size: localStorage.getItem("do-size") || "md",
   useSeason: localStorage.getItem("do-season") === "1",
 };
+
+function migrateTheme(theme) {
+  return ["parchment", "cream", "solarized"].includes(theme) ? "spacegray" : theme;
+}
 
 async function loadJSON(path) {
   const res = await fetch(path);
@@ -60,8 +64,8 @@ async function boot() {
 
 function readAppearanceQuery() {
   const params = new URLSearchParams(location.search);
-  if (["chapel", "clear", "parchment"].includes(params.get("theme"))) {
-    state.theme = params.get("theme");
+  if (["chapel", "clear", "spacegray", "solarized", "parchment", "cream"].includes(params.get("theme"))) {
+    state.theme = migrateTheme(params.get("theme"));
   }
   if (["sm", "md", "lg"].includes(params.get("size"))) {
     state.size = params.get("size");
@@ -135,6 +139,9 @@ function bind() {
 
 function applyAppearance() {
   const root = document.documentElement;
+  if (localStorage.getItem("do-theme") !== state.theme) {
+    localStorage.setItem("do-theme", state.theme);
+  }
   root.dataset.theme = state.theme;
   root.dataset.size = state.size;
   root.classList.toggle("use-season", state.useSeason);
