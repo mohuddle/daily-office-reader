@@ -1,0 +1,2 @@
+- Daily Office automation run times (America/Chicago): Morning 07:30, Midday 11:30, Evening 17:30, Compline 22:00. Morning/Midday/Evening were moved back 30 minutes from the original 08:00/12:00/18:00. Retain these times on any future prompt or schedule updates. [2026-08-13]
+- Morning and Evening Prayer automations now use hard-coded continuous lectionary tables for August–October 2026 (from Daily_Lectionary_Christian_Year.pdf) to avoid sandbox file-visibility and 1928-table fallback issues. Midday and Compline were already hard-coded. [2026-08-14]
