@@ -1,6 +1,8 @@
 # Daily Office Reader
 
-A phone-friendly Daily Office without Leo recordings. Psalms and lessons are linked to the [Berean Standard Bible on Bible Study Tools](https://www.biblestudytools.com/bsb/), where you can read the chapter and use their audio player.
+A phone-friendly Daily Office without local recordings. Psalms and lessons are linked to the [Berean Standard Bible on Bible Study Tools](https://www.biblestudytools.com/bsb/), where you can read the chapter and use their audio player.
+
+Live site: https://mohuddle.github.io/daily-office-reader/
 
 This is a sibling of [daily-office](https://github.com/mohuddle/daily-office), the same office with locally generated Qwen3-TTS voice. Keep that repo if you want the spoken office at home. Use this one if you want a light app that only points to the day’s readings.
 
