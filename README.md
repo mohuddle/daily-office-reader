@@ -52,3 +52,6 @@ This is a small personal Daily Office. It is not affiliated with the projects be
 - [Reformed Dogmatika Bible Reading Plan](https://reformeddogmatika.com/reformed-bible-reading-plan/)
 
 Scripture text of the opening sentences and the linked chapters is the [Berean Standard Bible](https://bereanbible.com/).
+
+---
+Made by [Mobitecture](https://github.com/mohuddle) · apps, architected.
